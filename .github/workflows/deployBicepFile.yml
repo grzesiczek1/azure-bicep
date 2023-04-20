@@ -12,12 +12,13 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Azure Policy Compliance Scan
-      uses: Azure/policy-compliance-scan@v0
-      with:
-        # Mandatory. Takes full identifier for one or more azure resources, resource groups or subscriptions. The on-demand policy compliance scan is triggered for all of these. 
-        # The ID can generally be found in the properties section of the resource in Azure Portal.
-        scopes: /subscriptions/${{ secrets.AZURE_SUBSCRIPTION }}
+        
+    # - name: Azure Policy Compliance Scan
+    #   uses: Azure/policy-compliance-scan@v0
+    #   with:
+    #     # Mandatory. Takes full identifier for one or more azure resources, resource groups or subscriptions. The on-demand policy compliance scan is triggered for all of these. 
+    #     # The ID can generally be found in the properties section of the resource in Azure Portal.
+    #     scopes: /subscriptions/${{ secrets.AZURE_SUBSCRIPTION }}
         
       # Deploy Bicep file
     - name: deploy

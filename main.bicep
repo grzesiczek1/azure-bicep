@@ -28,6 +28,9 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   properties: {
     supportsHttpsTrafficOnly: true
     allowBlobPublicAccess: false
+    networkAcls: {
+      defaultAction: 'Deny'
+    }
   }
 }
 
